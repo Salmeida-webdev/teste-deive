@@ -1,10 +1,5 @@
-﻿/* =====================================================
-   Deive Pereira — Gestão Financeira Terceirizada
-   Interações leves: menu, FAQ, reveal, formulário e ano
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
-  const WHATSAPP_NUMBER = "5500000000000";
+  const WHATSAPP_NUMBER = "5583998326680";
 
   const body = document.body;
   const header = document.querySelector("[data-header]");
@@ -13,18 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearElement = document.querySelector("[data-year]");
   const form = document.querySelector("[data-contact-form]");
   const feedback = document.querySelector("[data-form-feedback]");
-  const whatsappLinks = document.querySelectorAll('a[href*="wa.me/5500000000000"]');
 
   function setCurrentYear() {
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  }
-
-  function updateWhatsAppLinks() {
-    whatsappLinks.forEach((link) => {
-      link.setAttribute("href", `https://wa.me/${WHATSAPP_NUMBER}`);
-    });
+    if (yearElement) yearElement.textContent = new Date().getFullYear();
   }
 
   function handleHeaderScroll() {
@@ -35,10 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     updateHeader();
-
-    window.addEventListener("scroll", updateHeader, {
-      passive: true
-    });
+    window.addEventListener("scroll", updateHeader, { passive: true });
   }
 
   function handleMenu() {
@@ -61,36 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     menuToggle.addEventListener("click", () => {
-      const isOpen = menu.classList.contains("is-open");
-
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+      menu.classList.contains("is-open") ? closeMenu() : openMenu();
     });
 
     menu.addEventListener("click", (event) => {
-      const target = event.target;
-
-      if (target instanceof HTMLAnchorElement) {
-        closeMenu();
-      }
+      if (event.target instanceof HTMLAnchorElement) closeMenu();
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
+      if (event.key === "Escape") closeMenu();
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 860) {
-        closeMenu();
-      }
-    }, {
-      passive: true
-    });
+      if (window.innerWidth > 860) closeMenu();
+    }, { passive: true });
   }
 
   function handleFaq() {
@@ -98,21 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     faqItems.forEach((item) => {
       const button = item.querySelector("button");
-      const answer = item.querySelector(".faq-answer");
-
-      if (!button || !answer) return;
+      if (!button) return;
 
       button.addEventListener("click", () => {
         const isOpen = item.classList.contains("is-open");
 
         faqItems.forEach((currentItem) => {
           const currentButton = currentItem.querySelector("button");
-
           currentItem.classList.remove("is-open");
-
-          if (currentButton) {
-            currentButton.setAttribute("aria-expanded", "false");
-          }
+          if (currentButton) currentButton.setAttribute("aria-expanded", "false");
         });
 
         if (!isOpen) {
@@ -125,14 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleReveal() {
     const revealElements = document.querySelectorAll(".reveal");
-
     if (!revealElements.length) return;
 
     if (!("IntersectionObserver" in window)) {
-      revealElements.forEach((element) => {
-        element.classList.add("is-visible");
-      });
-
+      revealElements.forEach((element) => element.classList.add("is-visible"));
       return;
     }
 
@@ -148,9 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       rootMargin: "0px 0px -40px 0px"
     });
 
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+    revealElements.forEach((element) => observer.observe(element));
   }
 
   function onlyNumbers(value) {
@@ -160,24 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function maskPhone(value) {
     const numbers = onlyNumbers(value).slice(0, 11);
 
-    if (numbers.length <= 2) {
-      return numbers;
-    }
-
-    if (numbers.length <= 6) {
-      return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
-    }
-
-    if (numbers.length <= 10) {
-      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 6)}-${numbers.slice(6)}`;
-    }
+    if (numbers.length <= 2) return numbers;
+    if (numbers.length <= 6) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    if (numbers.length <= 10) return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 6)}-${numbers.slice(6)}`;
 
     return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
   }
 
   function handlePhoneMask() {
     const phoneInput = document.querySelector("#whatsapp");
-
     if (!phoneInput) return;
 
     phoneInput.addEventListener("input", () => {
@@ -187,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function buildWhatsAppMessage(data) {
     const lines = [
-      "Olá, gostaria de solicitar um diagnóstico financeiro.",
+      "Ola, gostaria de solicitar um diagnostico financeiro para minha empresa.",
       "",
       `Nome: ${data.nome}`,
       `Empresa: ${data.empresa}`,
@@ -220,10 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const hasEmptyField = Object.values(data).some((value) => value.length === 0);
 
       if (hasEmptyField) {
-        if (feedback) {
-          feedback.textContent = "Preencha todos os campos para continuar.";
-        }
-
+        if (feedback) feedback.textContent = "Preencha todos os campos para continuar.";
         return;
       }
 
@@ -235,23 +178,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = buildWhatsAppMessage(data);
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 
-      if (feedback) {
-        feedback.textContent = "Abrindo WhatsApp com sua solicitação.";
-      }
+      if (feedback) feedback.textContent = "Abrindo WhatsApp com sua solicitacao.";
 
       window.open(url, "_blank", "noopener,noreferrer");
 
       window.setTimeout(() => {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = "Solicitar diagnóstico financeiro";
+          submitButton.textContent = "Solicitar diagnostico financeiro";
         }
       }, 900);
     });
   }
 
   setCurrentYear();
-  updateWhatsAppLinks();
   handleHeaderScroll();
   handleMenu();
   handleFaq();

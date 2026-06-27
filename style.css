@@ -1585,3 +1585,422 @@ h3 {
     Arial,
     sans-serif;
 }
+
+/* =====================================================
+   Melhorias finais para página de teste
+   Sem WhatsApp/Instagram, contato institucional e anchors corrigidas
+===================================================== */
+
+#inicio,
+#sobre,
+#solucoes,
+#metodo,
+#beneficios,
+#conteudos,
+#faq,
+#contato {
+  scroll-margin-top: 112px;
+}
+
+/* Contato mais limpo e institucional */
+.test-info {
+  max-width: 640px;
+}
+
+.test-info > span {
+  width: 100%;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 24px;
+  border: 1px solid rgba(217, 188, 122, 0.72);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--navy);
+  box-shadow: 0 14px 34px rgba(44, 62, 107, 0.07);
+}
+
+.test-info > span > img {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  object-fit: contain;
+}
+
+.test-info > span > span,
+.test-info > span > strong {
+  display: block;
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--navy);
+  font-size: 1.04rem;
+  font-weight: 850;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.test-info > span small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Desativa qualquer botão flutuante antigo */
+.whatsapp-float {
+  display: none !important;
+}
+
+/* CTA menos pesado e mais refinado */
+.nav-cta {
+  box-shadow: 0 10px 24px rgba(44, 62, 107, 0.16);
+}
+
+.nav-cta:hover {
+  background: var(--navy-dark);
+}
+
+/* Botões com refinamento visual */
+.btn-primary {
+  box-shadow: 0 14px 32px rgba(44, 62, 107, 0.18);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 18px 42px rgba(44, 62, 107, 0.24);
+}
+
+/* Reduz leve excesso visual nos cards */
+.card,
+.solution-card,
+.contact-form,
+.benefits-panel {
+  box-shadow: 0 16px 42px rgba(44, 62, 107, 0.075);
+}
+
+/* Melhor leitura do formulário demonstrativo */
+.form-feedback {
+  color: var(--navy);
+  font-weight: 650;
+}
+
+@media (max-width: 680px) {
+  #inicio,
+  #sobre,
+  #solucoes,
+  #metodo,
+  #beneficios,
+  #conteudos,
+  #faq,
+  #contato {
+    scroll-margin-top: 92px;
+  }
+
+  .test-info > span {
+    min-height: 78px;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .test-info > span > img {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .test-info > span > span,
+  .test-info > span > strong {
+    font-size: 0.98rem;
+  }
+}
+
+/* =====================================================
+   Melhorias finais — página de teste mantendo ícones premium
+===================================================== */
+
+#inicio,
+#sobre,
+#solucoes,
+#metodo,
+#beneficios,
+#conteudos,
+#faq,
+#contato {
+  scroll-margin-top: 112px;
+}
+
+/* Contato demonstrativo com ícones premium preservados */
+.demo-contact-info {
+  max-width: 680px;
+}
+
+.demo-contact-info .demo-contact-card {
+  width: 100%;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 24px;
+  border: 1px solid rgba(217, 188, 122, 0.72);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--navy);
+  box-shadow: 0 14px 34px rgba(44, 62, 107, 0.07);
+}
+
+.demo-contact-info .demo-contact-card > img {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  object-fit: contain;
+}
+
+.demo-contact-info .demo-contact-card > span {
+  display: block;
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.demo-contact-info .demo-contact-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1.04rem;
+  font-weight: 850;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.demo-contact-info .demo-contact-card small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Remove apenas o flutuante, não os ícones da seção contato */
+.whatsapp-float {
+  display: none !important;
+}
+
+.nav-cta {
+  box-shadow: 0 10px 24px rgba(44, 62, 107, 0.16);
+}
+
+.nav-cta:hover {
+  background: var(--navy-dark);
+}
+
+.btn-primary {
+  box-shadow: 0 14px 32px rgba(44, 62, 107, 0.18);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 18px 42px rgba(44, 62, 107, 0.24);
+}
+
+.card,
+.solution-card,
+.contact-form,
+.benefits-panel {
+  box-shadow: 0 16px 42px rgba(44, 62, 107, 0.075);
+}
+
+.form-feedback {
+  color: var(--navy);
+  font-weight: 650;
+}
+
+@media (max-width: 680px) {
+  #inicio,
+  #sobre,
+  #solucoes,
+  #metodo,
+  #beneficios,
+  #conteudos,
+  #faq,
+  #contato {
+    scroll-margin-top: 92px;
+  }
+
+  .demo-contact-info .demo-contact-card {
+    min-height: 82px;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .demo-contact-info .demo-contact-card > img {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  .demo-contact-info .demo-contact-card strong {
+    font-size: 0.98rem;
+  }
+
+  .demo-contact-info .demo-contact-card small {
+    font-size: 0.88rem;
+  }
+}
+
+/* =====================================================
+   Correção final — ícones premium com WhatsApp e Instagram
+===================================================== */
+
+.demo-contact-info {
+  max-width: 680px;
+}
+
+.demo-contact-info .demo-contact-card {
+  width: 100%;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 24px;
+  border: 1px solid rgba(217, 188, 122, 0.72);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--navy);
+  box-shadow: 0 14px 34px rgba(44, 62, 107, 0.07);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.demo-contact-info a.demo-contact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-dark);
+  background: var(--surface);
+  box-shadow: 0 18px 44px rgba(44, 62, 107, 0.11);
+}
+
+.demo-contact-info .demo-contact-card > img {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  object-fit: contain;
+}
+
+.demo-contact-info .demo-contact-card > span {
+  display: block;
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.demo-contact-info .demo-contact-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1.04rem;
+  font-weight: 850;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.demo-contact-info .demo-contact-card small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.whatsapp-float {
+  display: grid !important;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  right: 22px;
+  bottom: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: none;
+}
+
+.whatsapp-float img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 26px rgba(44, 62, 107, 0.26));
+}
+
+#inicio,
+#sobre,
+#solucoes,
+#metodo,
+#beneficios,
+#conteudos,
+#faq,
+#contato {
+  scroll-margin-top: 112px;
+}
+
+@media (max-width: 680px) {
+  .demo-contact-info .demo-contact-card {
+    min-height: 82px;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .demo-contact-info .demo-contact-card > img {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  .demo-contact-info .demo-contact-card strong {
+    font-size: 0.98rem;
+  }
+
+  .demo-contact-info .demo-contact-card small {
+    font-size: 0.88rem;
+  }
+
+  .whatsapp-float {
+    width: 76px;
+    height: 76px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .whatsapp-float img {
+    width: 76px;
+    height: 76px;
+  }
+
+  #inicio,
+  #sobre,
+  #solucoes,
+  #metodo,
+  #beneficios,
+  #conteudos,
+  #faq,
+  #contato {
+    scroll-margin-top: 92px;
+  }
+}

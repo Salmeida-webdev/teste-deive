@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://seudominio.com.br/sitemap.xml
+Sitemap: https://consultoriateste.netlify.app/sitemap.xml
