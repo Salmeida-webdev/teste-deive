@@ -1,0 +1,15 @@
+{
+  "name": "deive-financeiro-onepage",
+  "version": "1.0.0",
+  "description": "Projeto one page leve para consultoria financeira / gestão financeira terceirizada.",
+  "main": "script.backup-20260627-144306.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.35.2"
+  }
+}
